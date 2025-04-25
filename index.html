@@ -1,15 +1,15 @@
 <!-- Unit 12 Project
 Requirements
-[  ] $() Select by Element, ID AND Class 
-[  ] Use Three Different jQuery Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[ y ] $() Select by Element, ID AND Class 
+[ y ] Use Three Different jQuery Methods 
+[y  ] Add Five CSS Declarations
+[ y ] Include Three Images
 
 Select ONE Additional 
 [ no ] Feature 1 - Use .addClass() method
 [ no ] Feature 2 - Use a variable in javaScript 
 [ no ] Feature 3 - Use .mouseover() method
-[ no ] Feature 4 - Use .show() method
+[ yes ] Feature 4 - Use .show() method
 [ no ] Feature 5 - Use .append() method
 -->
 
@@ -22,41 +22,95 @@ Select ONE Additional
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <button id="mem1-button">Memory #1</button>
-    <button id="mem2-button">Memory #2</button>
-    <button id="mem3-button">Memory #3</button>
+    
+   
+    
+    <button id="mem1-button" >Memory #1</button>
+    <button id="mem2-button" >Memory #2</button>
+    <button id="mem3-button" >Memory #3</button>
     <h1>My Top 3 Memories of <span>This Year</span></h1>
     <ol>
       <li>
         <h3 id="mem1">Memory #1</h3>
-        <p>More about this memory.</p>
+        <p > Key Club event at Prospect Park</p>
+    
       </li>
 
+       <div class="flip flip1" style = "display:none">Click to show</div>
+<div id="panel1"> <img src = "https://media.timeout.com/images/102699232/image.jpg" width = "600"></div>
+      
       <li>
         <h3 id="mem2">Memory #2</h3>
-        <p>More about this memory.</p>
+        <p id = "p2"> Dinner at pasta corner</p>
       </li>
 
+      <div class="flip flip2" style = "display:none">Click to show </div>
+<div id="panel2"><img src = "https://cdn.glitch.global/25f6f720-8fe7-493e-8b48-3d007c0c6feb/IMG_9573%20(1).jpeg?v=1745509715761" width = "600"></div>
+      
       <li>
         <h3 id="mem3">Memory #3</h3>
-        <p>More about this memory</p>
+        <p id = "p3"> Toured the museum w/architect group</p>
       </li>
     </ol>
 
+      <div class="flip flip3" style = "display:none" >Click to show</div>
+<div id="panel3"> <img src = "https://cdn.glitch.global/25f6f720-8fe7-493e-8b48-3d007c0c6feb/IMG_6013.jpeg?v=1745594209438" width = "500"></div>
+
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+      
+       
+      
       $("#mem1-button").click(function () {
-        $("#mem1").css("color", "purple");
+        $("#mem1").css("color", "rgb(74, 79, 122 )");
+        $("#mem1").text("Ice Skating");
+        $(".flip1").show(1000);
+        $("p").show();
       });
 
       $("#mem2-button").click(function () {
-        $("#mem2").css("color", "blue");
+        $("#mem2").css("color", "rgb(170, 59, 15 ) ");
+        $("#mem2").html("Valentines Day dinner w/friends");
+        $(".flip2").show(1000);
+        $("#p2").show();
+   
       });
+  
 
       $("#mem3-button").click(function () {
-        $("#mem3").css("color", "green");
+        $("#mem3").css("color", "rgb(92, 166, 114 )");
+        $("#mem3").text("Touring The MET after closing ");
+        $(".flip3").show(1000);
+        $("#p3").show();
+   });
+        
+        $(document).ready(function(){
+  $(".flip1").click(function(){
+    $("#panel1").slideToggle("slow");})
+                    
+    $(".flip2").click(function(){
+    $("#panel2").slideToggle("slow");
+  });
+    
+          $(".flip3").click(function(){
+            $("#panel3").slideToggle("slow");
+          });
+
+      
       });
+   
+     
+ 
+      
+     
+      
+    
+   
+      
     </script>
+
+    
   </body>
 </html>
 
